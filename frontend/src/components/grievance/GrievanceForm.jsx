@@ -16,7 +16,12 @@ const GrievanceForm = ({ onSuccess }) => {
     try {
       const payload = isLoggedIn
         ? { title: form.title, description: form.description }
-        : form;
+        : {
+            title: form.title,
+            description: form.description,
+            submitter_name: form.submitter_name || null,
+            submitter_email: form.submitter_email || null,
+          };
       const res = isLoggedIn ? await submitLoggedIn(payload) : await submitAnonymous(payload);
       toast.success(`Grievance submitted! Ticket: ${res.data.ticket_id}`);
       onSuccess && onSuccess(res.data);
