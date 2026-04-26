@@ -61,7 +61,6 @@ UPDATE users SET role = 'admin' WHERE email = 'admin@example.com';
 
 - Anonymous + logged-in grievance submission
 - Unique ticket ID generation
-- AI-based category + priority auto-detection
 - Citizen dashboard to track own grievances
 - Admin dashboard with stats + status management
 - JWT-based authentication
